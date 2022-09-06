@@ -10,7 +10,7 @@ let seriesMask:[String: String] = {
 
 struct Series: Codable, Content {
     var id = UUID().uuidString
-    var slices = Array(seriesMask.keys)
+    var slices = Array(seriesMask.keys.sorted(by: { Int(seriesMask[$0]!)! < Int(seriesMask[$1]!)! }))
 }
 
 
