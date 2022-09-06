@@ -32,7 +32,7 @@ func routes(_ app: Application) throws {
                   throw Abort(.notFound, reason: "Slice not found for given id")
               }
         
-        let response = request.fileio.streamFile(at: "Public/images/image_\(seriesMask[index]).jpg")
+        let response = request.fileio.streamFile(at: "Public/images/image_\(seriesMask[index]!).jpg")
         return response
     }
 
